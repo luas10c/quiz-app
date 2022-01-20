@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050306;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #231F20;
+  overflow: hidden;
+}
+
+button {
+  border: 2px solid #231F20;
+  background-color: transparent;
+  color: #231F20;
+  border-radius: 4.5px;
+  padding: 4.5px 18px;
+  font-size: .675em;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #2c702f;
+  color: #2c702f;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border-top: 3px solid #2c702f;
+  border-bottom: 3px solid #2c702f;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-radius: 50%;
+  animation: spinner .8s linear infinite;
+}
+
+.header .header-primary .container {
+  display: flex;
+  justify-content: center;
+  padding: 27px 0;
+}
+
+.header .header-primary .container a img {
+  width: 64px;
+  height: 64px;
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-section .question .container header h3 {
+  text-align: center;
+}
+
+.question-section .question .container header p {
+  text-align: center;
+  font-size: .675em;
+  font-weight: 700;
+  padding-top: 1.5px;
+}
+
+.question-section .question .container .answers {
+  padding-top: 18px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+}
+
+.question-section .question .container .answers .answer {
+  border: 2px solid #231F20;
+  padding: 4.5px 9px;
+  border-radius: 4.5px;
+  cursor: pointer;
+  transition: border .1s ease-in-out;
+}
+
+.question-section .question .container .answers .answer:hover {
+  border-color: #2c702f;
+  color: #2c702f;
+}
+
+.question-statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-statistics footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4.5px;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
