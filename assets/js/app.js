@@ -133,5 +133,5 @@ window.addEventListener('load', () => {
       })
       document.body.appendChild(copyQuestionSection)
     } 
-  }, 50);
+  }, 200);
 });
