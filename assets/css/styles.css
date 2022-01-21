@@ -1,24 +1,70 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 body {
-  background-color: #050306;
+  background-color: #0b080e;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.6em;
-  color: #231F20;
+  font-size: 100%;
+  color: #362d3e;
   overflow: hidden;
+
+  padding: 0 18px;
 }
 
 button {
-  border: 2px solid #231F20;
+  border: 2px solid #281e31;
   background-color: transparent;
-  color: #231F20;
+  color: #281e31;
   border-radius: 4.5px;
-  padding: 4.5px 18px;
-  font-size: .675em;
+  padding: 9px 18px;
+  font-size: .975em;
   font-weight: 700;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
@@ -26,8 +72,8 @@ button {
 }
 
 button:hover {
-  border-color: #2c702f;
-  color: #2c702f;
+  border-color: #248a3a;
+  color: #248a3a;
 }
 
 .loading {
@@ -40,8 +86,8 @@ button:hover {
 .spinner {
   width: 24px;
   height: 24px;
-  border-top: 3px solid #2c702f;
-  border-bottom: 3px solid #2c702f;
+  border-top: 3px solid #248a3a;
+  border-bottom: 3px solid #248a3a;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
   border-radius: 50%;
@@ -55,46 +101,61 @@ button:hover {
 }
 
 .header .header-primary .container a img {
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
 }
 
 .question-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 18px;
+  border: 2px solid #281e31;
+  border-radius: 4.5px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.question-section .question .container {
+  max-width: 550px;
 }
 
 .question-section .question .container header h3 {
   text-align: center;
+  font-size: 2.2em;
 }
 
 .question-section .question .container header p {
   text-align: center;
-  font-size: .675em;
+  font-size: .775em;
   font-weight: 700;
   padding-top: 1.5px;
 }
 
 .question-section .question .container .answers {
-  padding-top: 18px;
+  padding-top: 48px;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4.5px;
+  gap: 9px;
 }
 
 .question-section .question .container .answers .answer {
-  border: 2px solid #231F20;
-  padding: 4.5px 9px;
+  border: 2px solid #281e31;
+  padding: 9px 18px;
   border-radius: 4.5px;
   cursor: pointer;
   transition: border .1s ease-in-out;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .question-section .question .container .answers .answer:hover {
-  border-color: #2c702f;
-  color: #2c702f;
+  border-color: #248a3a;
+  color: #248a3a;
 }
 
 .question-statistics {
@@ -110,11 +171,64 @@ button:hover {
   padding-top: 4.5px;
 }
 
+.answer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border: 2px solid #281e31;
+  margin: 0 18px;
+  margin-bottom: 18px;
+  border-radius: 4.5px;
+}
+
+.answer > h2 {
+  font-size: 2em;
+  padding-bottom: 4.5px;
+}
+
+.answer.answer-right h2{
+  color: #248a3a;
+}
+.answer.answer-wrong h2 {
+  color: #8a2424;
+}
+
+.question-statistics {
+  border: 2px solid #281e31;
+  padding: 18px;
+  margin: 0 18px;
+  border-radius: 4.5px;
+}
+
+.question-statistics h2 {
+  font-size: 2.2em;
+  padding-bottom: 18px;
+}
+
 @keyframes spinner {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg)
+  }
+}
+
+@media (min-width: 768px) {
+  .question-section {
+    width: 600px;
+  }
+
+  .answer {
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+  }
+
+  .question-statistics {
+    width: 600px;
+    margin: 0 auto;
   }
 }
